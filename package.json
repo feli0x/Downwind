@@ -14,8 +14,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "downwind.helloWorld",
-        "title": "Hello World"
+        "command": "extension.removeTailwindClasses",
+        "title": "Remove Tailwind Classes"
+      },
+      {
+        "command": "extension.removeAllClasses",
+        "title": "Remove all classes"
       }
     ]
   },
