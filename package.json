@@ -1,8 +1,13 @@
 {
   "name": "downwind",
-  "displayName": "downwind",
-  "description": "Remove all tailwind classes from a file.",
-  "version": "0.0.1",
+  "displayName": "Downwind",
+  "description": "Remove all tailwind classes from selection.",
+  "author": "Felix Swinkels",
+  "publisher": "feli0x",
+  "homepage": "https://felix.surf/",
+  "repository": "https://github.com/feli0x/downwind",
+  "icon": "assets/icon.png",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.83.0"
   },
@@ -14,12 +19,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.removeTailwindClasses",
-        "title": "Remove Tailwind Classes"
-      },
-      {
-        "command": "extension.removeAllClasses",
-        "title": "Remove all classes"
+        "command": "extension.downwind",
+        "title": "Downwind (beta)"
       }
     ]
   },
