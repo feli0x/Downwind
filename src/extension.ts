@@ -7,82 +7,78 @@ function removeTailwindClasses(classType: string): void {
     return;
   }
 
-  let classList: string[] = [];
+  const classMap: Record<string, string[]> = {
+    typography: [
+      "font",
+      "text",
+      "whitespace",
+      "break",
+      "align",
+      "leading",
+      "list",
+      "placeholder",
+      "rte",
+      "tracking",
+    ],
+    layout: [
+      "p",
+      "m",
+      "w",
+      "min",
+      "max",
+      "h",
+      "container",
+      "box",
+      "grid",
+      "flex",
+      "table",
+      "float",
+      "clear",
+      "absolute",
+      "fixed",
+      "inset",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "z",
+      "order",
+      "object",
+      "overflow",
+      "aspect",
+      "col",
+      "row",
+      "basis",
+      "grow",
+      "shrink",
+      "justify",
+      "content",
+      "items",
+      "align",
+      "place",
+      "gap",
+      "space",
+    ],
+    styling: [
+      "bg",
+      "border",
+      "divide",
+      "ring",
+      "shadow",
+      "opacity",
+      "transition",
+      "duration",
+      "ease",
+      "delay",
+      "animate",
+    ],
+  };
 
-  switch (classType) {
-    case "typography":
-      classList = [
-        "font",
-        "text",
-        "whitespace",
-        "break",
-        "align",
-        "leading",
-        "list",
-        "placeholder",
-        "rte",
-        "tracking",
-      ];
-      break;
-    case "layout":
-      classList = [
-        "p",
-        "m",
-        "w",
-        "min",
-        "max",
-        "h",
-        "container",
-        "box",
-        "grid",
-        "flex",
-        "table",
-        "float",
-        "clear",
-        "absolute",
-        "fixed",
-        "inset",
-        "top",
-        "right",
-        "bottom",
-        "left",
-        "z",
-        "order",
-        "object",
-        "overflow",
-        "aspect",
-        "col",
-        "row",
-        "basis",
-        "grow",
-        "shrink",
-        "justify",
-        "content",
-        "items",
-        "align",
-        "place",
-        "gap",
-        "space",
-      ];
-      break;
-    case "styling":
-      classList = [
-        "bg",
-        "border",
-        "divide",
-        "ring",
-        "shadow",
-        "opacity",
-        "transition",
-        "duration",
-        "ease",
-        "delay",
-        "animate",
-      ];
-      break;
-    default:
-      removeAllClasses();
-      return;
+  const classList: string[] = classMap[classType] || [];
+
+  if (!classList.length) {
+    removeAllClasses();
+    return;
   }
 
   const regex: RegExp = new RegExp(

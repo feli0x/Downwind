@@ -7,7 +7,7 @@
   "homepage": "https://felix.surf/",
   "repository": "https://github.com/feli0x/downwind",
   "icon": "assets/icon.png",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.83.0"
   },
